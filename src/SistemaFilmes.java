@@ -59,6 +59,10 @@ public class SistemaFilmes {
     // LOGIN
     // =========================================================
 
+    // CORREÇÃO PRINCIPAL: O login agora é feito usando o método login do
+    // UsuarioDAO, que verifica as credenciais no banco de dados. Se o login for
+    // bem-sucedido, o usuário logado é armazenado na variável usuarioLogado e o
+    // menu principal é exibido. Caso contrário, uma mensagem de erro é mostrada.
     static void login() {
 
         System.out.println("\n======= LOGIN =======");
@@ -69,20 +73,19 @@ public class SistemaFilmes {
         System.out.print("Senha: ");
         String senha = scanner.nextLine();
 
-        // hash obrigatório (compatível com banco)
-        String senhaHash = HashUtil.sha256(senha);
-
-        // autenticação via banco (DAO)
-        usuarioLogado = usuarioDAO.login(nome, senhaHash);
+        usuarioLogado = usuarioDAO.login(nome, senha);
 
         if (usuarioLogado != null) {
+
             System.out.println("\nLogin realizado com sucesso!");
+
             menuPrincipal();
+
         } else {
+
             System.out.println("Usuário ou senha incorretos.");
         }
     }
-
     // =========================================================
     // CADASTRO
     // =========================================================
