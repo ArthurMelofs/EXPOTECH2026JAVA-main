@@ -33,6 +33,9 @@ CREATE TABLE avaliacoes (
     CONSTRAINT chk_nota CHECK (nota BETWEEN 1 AND 5)
 );
 
+delete from usuarios
+where id = 8;
+
 select * from usuarios;
 
 select * from filmes;
@@ -51,10 +54,6 @@ ALTER TABLE avaliacoes CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_
 #Continua guardadndo senha mais agora com hash#
 ALTER TABLE usuarios MODIFY senha VARCHAR(64);
 
-#Insert do admin padrao#
-INSERT INTO usuarios (nome, senha, perfil)
-VALUES ('admin', '123', 'ADMIN');
-
 #Inserts de usuarios#
 INSERT INTO usuarios (nome, senha, perfil) VALUES
 ('admin', SHA2('123', 256), 'ADMIN'),
@@ -65,7 +64,7 @@ INSERT INTO usuarios (nome, senha, perfil) VALUES
 
 #Filmes Inserts#
 INSERT INTO filmes (titulo, diretor, ano, genero) VALUES
-('Interestelar', 'Christopher Nolan', 2014, 'Ficção Científica'),
+('Interestelar', 'Christopher Nolan', 2014, 'Drama'),
 ('Parasita', 'Bong Joon-ho', 2019, 'Drama'),
 ('Clube da Luta', 'David Fincher', 1999, 'Drama'),
 ('Matrix', 'Irmãos Wachowski', 1999, 'Ação / Ficção Científica'),
