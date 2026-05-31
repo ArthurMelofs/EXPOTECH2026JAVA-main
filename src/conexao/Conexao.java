@@ -10,7 +10,7 @@ public class Conexao {
 
     private static final String url = "jdbc:mysql://localhost:3306/sistema_filmes?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC";
     private static final String user = "root";
-    private static final String password = "Sua senha";
+    private static final String password = "Sua senha aqui";
 
     private static Connection conn;
 

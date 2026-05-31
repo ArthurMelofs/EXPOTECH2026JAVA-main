@@ -41,8 +41,6 @@ public class UsuarioDAO {
 
             stmt.setString(1, nome);
 
-            System.out.println("Buscando usuário: " + nome);
-
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
@@ -50,12 +48,7 @@ public class UsuarioDAO {
                 String senhaBanco = rs.getString("senha");
                 String senhaHash = HashUtil.sha256(senha);
 
-                System.out.println("Senha banco: " + senhaBanco);
-                System.out.println("Senha digitada hash: " + senhaHash);
-
                 if (senhaBanco.equals(senhaHash)) {
-
-                    System.out.println("Hash conferiu.");
 
                     Usuario u = new Usuario();
 
@@ -66,11 +59,6 @@ public class UsuarioDAO {
 
                     return u;
                 }
-
-                System.out.println("Hash diferente.");
-            } else {
-
-                System.out.println("Usuário não encontrado.");
             }
 
         } catch (Exception e) {
