@@ -1,3 +1,4 @@
+//Comentario: Esta classe é responsável por gerar um hash SHA-256 a partir de uma string de senha. O método sha256 recebe uma string, converte-a em bytes, gera o hash e retorna o resultado como uma string hexadecimal.
 package src;
 
 import java.security.MessageDigest;
