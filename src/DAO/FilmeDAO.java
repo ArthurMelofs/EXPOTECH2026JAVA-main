@@ -7,6 +7,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+//comeponente responsável por acessar o banco de dados para operações relacionadas a filmes
 public class FilmeDAO {
 
     public void criar(Filme f) {

@@ -7,6 +7,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+//Componente responsável por acessar o banco de dados para operações relacionadas a avaliações
 public class AvaliacaoDAO {
 
     public void salvar(Avaliacao a) {

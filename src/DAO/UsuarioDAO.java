@@ -5,6 +5,7 @@ import src.conexao.Conexao;
 
 import java.sql.*;
 
+//Componente responsável por acessar o banco de dados para operações relacionadas a usuários
 public class UsuarioDAO {
 
     public void cadastrarUsuario(Usuario u) {
